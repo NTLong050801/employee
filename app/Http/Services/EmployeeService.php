@@ -42,12 +42,14 @@ class EmployeeService
     public function edit(string $id)
     {
         //
+        return $this->repository->find($id, $columns = ['*']);
     }
 
 
-    public function update(Request $request, string $id)
+    public function update( $request, string $id)
     {
         //
+        return $this->repository->update($request->input(),$id);
     }
 
 

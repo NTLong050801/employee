@@ -6,6 +6,7 @@ use App\Http\Services\EmployeeService;
 use App\Repositories\EmployeeRepository;
 use App\Repositories\EmployeeRepositoryEloquent;
 use Illuminate\Http\Request;
+use voku\helper\ASCII;
 
 class EmployeeController extends Controller
 {
@@ -58,6 +59,10 @@ class EmployeeController extends Controller
     public function edit(string $id)
     {
         //
+        $employee = $this->EmployeeSerivce->edit($id);
+
+        $title = "Edit employee";
+        return view('edit',compact('employee','title'));
     }
 
     /**
@@ -66,6 +71,8 @@ class EmployeeController extends Controller
     public function update(Request $request, string $id)
     {
         //
+        $this->EmployeeSerivce->update($request,$id);
+        return redirect()->route('employees.index');
     }
 
     /**
