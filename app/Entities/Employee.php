@@ -23,9 +23,9 @@ class Employee extends Model implements Transformable
     protected $fillable = [
         'name',
         'date',
+        'gender',
+        'phone',
         'email',
-        'sex',
-        'phone'
     ];
 
 }

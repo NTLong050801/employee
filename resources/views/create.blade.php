@@ -17,13 +17,13 @@
         </div>
         <div class="form-group">
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="sex" id="exampleRadios1" value="Nam" checked>
+                <input class="form-check-input" type="radio" name="gender" id="exampleRadios1" value="Nam" checked>
                 <label class="form-check-label" for="exampleRadios1">
                     Nam
                 </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="sex" id="exampleRadios2" value="Nữ">
+                <input class="form-check-input" type="radio" name="gender" id="exampleRadios2" value="Nữ">
                 <label class="form-check-label" for="exampleRadios2">
                     Nu
                 </label>

@@ -27,9 +27,10 @@ class EmployeeService
     }
 
 
-    public function store(Request $request)
+    public function store($request)
     {
         //
+        $this->repository->create($request->input());
     }
 
 

@@ -38,8 +38,10 @@ class EmployeeController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        dd($request);
+
+        $this->EmployeeSerivce->store($request);
+
+        return redirect()->route('employees.index');
     }
 
     /**
