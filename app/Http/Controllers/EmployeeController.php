@@ -2,16 +2,25 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Services\EmployeeService;
+use App\Repositories\EmployeeRepository;
+use App\Repositories\EmployeeRepositoryEloquent;
 use Illuminate\Http\Request;
 
 class EmployeeController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    protected $EmployeeSerivce;
+
+    public function __construct(EmployeeService $employeeService){
+        $this->EmployeeSerivce = $employeeService;
+    }
+
     public function index()
     {
         //
+        $employees = $this->EmployeeSerivce->index();
+        $title = "List Employees";
+        return view('home',compact('employees','title'));
     }
 
     /**
@@ -20,6 +29,8 @@ class EmployeeController extends Controller
     public function create()
     {
         //
+        $title = "Add Employee";
+        return view('create',compact('title'));
     }
 
     /**
@@ -28,6 +39,7 @@ class EmployeeController extends Controller
     public function store(Request $request)
     {
         //
+        dd($request);
     }
 
     /**
@@ -59,6 +71,8 @@ class EmployeeController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+
+        $this->EmployeeSerivce-> destroy($id);
+        return redirect()->back();
     }
 }
